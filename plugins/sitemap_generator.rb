@@ -294,9 +294,9 @@ module Jekyll
             return true
           end
         end
-        #puts "Didn't excldue #{name}"
-        false
       }
+      #puts "Didn't excldue #{name}"
+      false
     end
 
     def posts_included?(name)
