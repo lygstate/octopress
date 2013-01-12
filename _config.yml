@@ -36,7 +36,7 @@ category_dir: blog/categories
 markdown: rdiscount
 pygments: true # default python pygments have been replaced by pygments.rb
 
-exclude: 2013-01-12-converting-between-different-ssh-private-slash-public-key-formats-MarkdownPadPreview.html
+exclude: [2013-01-12-converting-between-different-ssh-private-slash-public-key-formats-MarkdownPadPreview.html, 2013-01-12-building-a-socks-proxy-on-ec2-MarkdownPadPreview.html]
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
