@@ -46,7 +46,7 @@ module Jekyll
   SITEMAP_FILE_NAME = "sitemap.xml"
 
   # Any files to exclude from being included in the sitemap.xml
-  EXCLUDED_FILES = ["atom.xml"]
+  EXCLUDED_FILES = ["atom.xml", /.*-MarkdownPadPreview\..*/]
 
   # Any files that include posts, so that when a new post is added, the last
   # modified date of these pages should take that into account
@@ -281,7 +281,22 @@ module Jekyll
     #
     # Returns boolean
     def excluded?(name)
-      EXCLUDED_FILES.include? name
+      # Exclude with name and Regexp
+      EXCLUDED_FILES.each { |item| 
+        if item.kind_of? String
+          if item == name
+            #puts "Excldue with name #{name}"
+            return true
+          end
+        elsif item.kind_of?(Regexp)
+          if (item.match(name))
+            #puts "Excldue with Regexp #{name}"
+            return true
+          end
+        end
+        #puts "Didn't excldue #{name}"
+        false
+      }
     end
 
     def posts_included?(name)
